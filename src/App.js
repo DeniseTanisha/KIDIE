@@ -45,7 +45,7 @@ class App extends Component {
       <section className="page">
         <div className="calendar">
           <section>
-            <h1 className="title">Shea's World of Interpretive Dance</h1>
+            <h1 className="title">Shea's World of Interpretive Dance </h1>
           </section>
           <span className="search">
             <i class="fa fa-search" aria-hidden="true"></i>
@@ -54,7 +54,7 @@ class App extends Component {
           <section className="cardCollection">
             {this.state.events.map(event => (
               <p className="eventCard">
-                <h4>{event.start.date} </h4>
+                <h4 className="date">{event.start.date} </h4>
                 <h3>{event.summary}</h3>
                 {/* {` ${event.start.dateTime} ---- ${event.end.date}   ${event.end.dateTime} `} */}
               </p>

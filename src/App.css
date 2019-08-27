@@ -1,25 +1,33 @@
+* {
+  font-family: "Poiret One", cursive;
+}
+
 .page {
-  background-color: #b2c6ca;
+  background-color: #5f7db2a1;
   height: 100%;
   width: 100%;
 }
 
 .calendar {
-  margin: 0%10%;
+  margin: 0% 10%;
   height: 80%;
   width: 80%;
   display: flex;
   flex-direction: column;
   background-color: white;
   justify-content: center;
+  border-top: #5f7db2a1 3rem solid;
 }
 
 .title {
-  color: teal;
+  text-align: center;
+  color: #3a506b;
+  font-size: 2.3rem;
 }
 
 .search {
-  margin: 1em 2em 2em 16em;
+  text-align: center;
+  margin: 1em;
 }
 .searchBar {
   margin-left: 1em;
@@ -27,7 +35,6 @@
 }
 
 .cardCollection {
-  border: solid 2px green;
   width: 80vw;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -35,8 +42,19 @@
 
 .eventCard {
   height: 8rem;
-  border: solid blue 2px;
+  background-color: #a1d1cb;
+  border: solid #ff6f69 2px;
   margin: 5px 5px;
   padding: 0.5rem 2rem;
   border-radius: 10px;
+  box-shadow: 5px 5px #7971718a;
+}
+.eventCard:hover {
+  cursor: pointer;
+  background-color: #daf598;
+}
+
+.date {
+  color: #9e2233;
+  font-weight: bold;
 }
