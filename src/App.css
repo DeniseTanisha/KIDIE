@@ -1,7 +1,42 @@
 .page {
-  text-align: center;
+  background-color: #b2c6ca;
+  height: 100%;
+  width: 100%;
+}
+
+.calendar {
+  margin: 0%10%;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
 }
 
 .title {
   color: teal;
+}
+
+.search {
+  margin: 1em 2em 2em 16em;
+}
+.searchBar {
+  margin-left: 1em;
+  width: 40%;
+}
+
+.cardCollection {
+  border: solid 2px green;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.eventCard {
+  height: 8rem;
+  border: solid blue 2px;
+  margin: 5px 5px;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
 }

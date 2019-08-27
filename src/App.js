@@ -42,13 +42,26 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          {this.state.events.map(event => (
-            <li> {event.summary} </li>
-          ))}
-        </ul>
-      </div>
+      <section className="page">
+        <div className="calendar">
+          <section>
+            <h1 className="title">Shea's World of Interpretive Dance</h1>
+          </section>
+          <span className="search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input className="searchBar"></input>{" "}
+          </span>
+          <section className="cardCollection">
+            {this.state.events.map(event => (
+              <p className="eventCard">
+                <h4>{event.start.date} </h4>
+                <h3>{event.summary}</h3>
+                {/* {` ${event.start.dateTime} ---- ${event.end.date}   ${event.end.dateTime} `} */}
+              </p>
+            ))}
+          </section>
+        </div>
+      </section>
     );
   }
 }
