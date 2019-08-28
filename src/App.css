@@ -17,12 +17,17 @@
   background-color: white;
   justify-content: center;
   border-top: #5f7db2a1 3rem solid;
+  padding-bottom: 5px;
+  border-bottom: #5f7db2a1 3rem solid;
 }
 
 .title {
   text-align: center;
   color: #3a506b;
   font-size: 2.3rem;
+}
+.dancing {
+  height: 2.7rem;
 }
 
 .search {
@@ -51,10 +56,15 @@
 }
 .eventCard:hover {
   cursor: pointer;
-  background-color: #daf598;
+  background-color: #bbd871;
 }
 
 .date {
   color: #9e2233;
   font-weight: bold;
+}
+
+.calendarEvent:hover {
+  color: #9e2233;
+  font-size: 1rem;
 }

@@ -1,10 +1,32 @@
 import React, { Component } from "react";
 import "./App.css";
+import dance from "./dance.png";
 
 class App extends Component {
   state = {
-    events: []
+    events: [],
+    inputText: "",
+    filteredList: []
   };
+
+  // handleSearch = event => {
+  //   const inputText = event.target.value;
+  //   const filteredList = this.filterCalendar(inputText);
+
+  //   this.setState({ inputText: inputText, filteredList });
+  //   console.log(event.target.value);
+  // };
+
+  // // Important to keep the original list intact and filter that against new criteria
+  // filterCalendar = searchText => {
+  //   return this.state.events.filter(event => {
+  //     const ar = Object.values(event).filter(value => {
+  //       return value.toLowerCase().includes(searchText.toLowerCase());
+  //     });
+  //     return ar.length > 0;
+  //   });
+  // };
+
   componentDidMount = () => {
     this.getEvents();
   };
@@ -45,20 +67,34 @@ class App extends Component {
       <section className="page">
         <div className="calendar">
           <section>
-            <h1 className="title">Shea's World of Interpretive Dance </h1>
+            <h1 className="title">
+              Shea's World of Interpretive Dance{" "}
+              <img src={dance} className="dancing" />
+            </h1>
           </section>
           <span className="search">
             <i class="fa fa-search" aria-hidden="true"></i>
-            <input className="searchBar"></input>{" "}
+            <input
+              className="searchBar"
+              onChange={this.handleSearch}
+              placeholder="Search IDI Events..."
+              // value={this.state.inputText}
+              type="text"
+            />
           </span>
           <section className="cardCollection">
             {this.state.events.map(event => (
-              <p className="eventCard">
+              <article className="eventCard">
                 <h4 className="date">{event.start.date} </h4>
                 <h3>{event.summary}</h3>
+                <h5 className="calendarEvent">Add Event To Calendar</h5>
                 {/* {` ${event.start.dateTime} ---- ${event.end.date}   ${event.end.dateTime} `} */}
-              </p>
+              </article>
             ))}
+            {/* //{" "}
+            {this.state.filteredData.map(i => (
+              <p>{i.name}</p>
+            ))} */}
           </section>
         </div>
       </section>
