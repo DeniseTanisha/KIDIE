@@ -9,30 +9,29 @@ class App extends Component {
     filteredList: []
   };
 
-  // handleSearch = event => {
-  //   const inputText = event.target.value;
-  //   const filteredList = this.filterCalendar(inputText);
+  handleSearch = event => {
+    const inputText = event.target.value;
+    const filteredList = this.filterCalendar(inputText);
 
-  //   this.setState({ inputText: inputText, filteredList });
-  //   console.log(event.target.value);
-  // };
+    this.setState({ inputText: inputText, filteredList });
+    console.log(event.target.value);
+  };
 
-  // // Important to keep the original list intact and filter that against new criteria
-  // filterCalendar = searchText => {
-  //   return this.state.events.filter(event => {
-  //     const ar = Object.values(event).filter(value => {
-  //       return value.toLowerCase().includes(searchText.toLowerCase());
-  //     });
-  //     return ar.length > 0;
-  //   });
-  // };
+  // Important to keep the original list intact and filter that against new criteria
+  filterCalendar = searchText => {
+    return this.state.events.filter(event => {
+      const matchedEvents = Object.value(event).filter(value => {
+        return value.toLowerCase().includes(searchText.toLowerCase());
+      });
+      return matchedEvents.length > 0;
+    });
+  };
 
   componentDidMount = () => {
     this.getEvents();
   };
   getEvents() {
-    let that = this;
-    function start() {
+    const start = () => {
       window.gapi.client
         .init({
           apiKey: "AIzaSyBfkp9QX42_w-xbobYmvB1D0vNoFJiDu_E"
@@ -45,20 +44,20 @@ class App extends Component {
         .then(
           response => {
             let events = response.result.items;
-            that.setState(
+            this.setState(
               {
                 events
               },
               () => {
-                console.log(that.state.events);
+                console.log(this.state.events);
               }
             );
           },
-          function(reason) {
+          reason => {
             console.log(reason);
           }
         );
-    }
+    };
     window.gapi.load("client", start);
   }
 
